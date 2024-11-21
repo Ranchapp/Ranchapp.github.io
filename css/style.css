@@ -33,7 +33,7 @@ body {
   display: grid; /* Usa CSS Grid para organizar los botones */
   grid-template-columns: repeat(4, auto); /* Tres columnas para los botones */
   gap: 10px; /* Espaciado entre botones */
-  background: #155da1; /* Color de fondo para el área de botones */
+  background: white; /* Color de fondo para el área de botones */
   padding: 10px; /* Espaciado interno */
   border-radius: 35px; /* Bordes redondeados */
   box-shadow: 1px 1px 6px rgb(248, 247, 247);
@@ -43,7 +43,7 @@ body {
 .nav-list button {
   font-size: 1.5em;
   background:transparent; /* Color de fondo de los botones */
-  color: white; /* Color del texto de los botones */
+  color: #155da1; /* Color del texto de los botones */
   border: none; /* Elimina el borde predeterminado */
   padding: 10px 20px; /* Espaciado interno de los botones */
   cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
@@ -53,7 +53,7 @@ body {
 
 /* Efecto hover para los botones */
 .nav-list button:hover {
-  background:rgba(31, 18, 87, 0.5); /* Color de fondo al hacer hover */
+  background:rgba(1, 58, 245, 0.664); /* Color de fondo al hacer hover */
   color: white;
 }
 
@@ -1000,7 +1000,7 @@ button {
 #politicas-copyrigth{
   font-size: 1em;
   z-index: 1000;
-  top: 135px;
+  top: px;
   color: white;
   position: relative;
   justify-content: center;
@@ -1014,23 +1014,5 @@ button {
     #politicas-copyrigth{
       font-size: 0.7em;
       z-index: 1000;
-      color: white;
-      position: relative;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      top :0px;
-    }
-    }
-  @media (max-width: 1050px) {
-    #politicas-copyrigth{
-      font-size: 0.7em;
-      z-index: 1000;
-      color: white;
-      position: relative;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      top :0px;
     }
     }
