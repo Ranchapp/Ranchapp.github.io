@@ -31,7 +31,7 @@ body {
 .nav-list {
   list-style-type: none; /* Elimina los puntos de la lista */
   display: grid; /* Usa CSS Grid para organizar los botones */
-  grid-template-columns: repeat(3, auto); /* Tres columnas para los botones */
+  grid-template-columns: repeat(4, auto); /* Tres columnas para los botones */
   gap: 10px; /* Espaciado entre botones */
   background: #155da1; /* Color de fondo para el área de botones */
   padding: 10px; /* Espaciado interno */
@@ -111,7 +111,7 @@ body {
 /* Media Query para pantallas pequeñas */
 @media (max-width: 1200px) {
   .nav-list {
-      grid-template-columns: repeat(3, auto); /* Los botones se apilan verticalmente en pantallas pequeñas */
+      grid-template-columns: repeat(4, auto); /* Los botones se apilan verticalmente en pantallas pequeñas */
       text-align: center; /* Centra los botones */
   }
 
@@ -231,6 +231,10 @@ body {
 
   #pie-img{
   display: none;
+  }
+
+  #contacto-nav{
+    display: none
   }
 
   #p-span{
