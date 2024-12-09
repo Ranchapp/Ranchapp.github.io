@@ -107,3 +107,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
+
+function moveCarousel() {
+  const angle = (360 / totalItems) * currentIndex;
+  document.querySelector('.carousel-wrapper').style.transform = `rotateY(-${angle}deg)`;
+  currentIndex = (currentIndex + 1) % totalItems;
+}
+
+setInterval(moveCarousel, 3000); // Mueve el carrusel cada 3 segundos
+moveCarousel(); // Inicia el movimiento al cargar

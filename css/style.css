@@ -667,150 +667,128 @@ transform: translateX(0);
 }
 
 
-/*Equipo*/
-
-.nuestro-equipo {
-padding-top: 100px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-width: 100%;
+#cuadroequipo {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
 }
 
-.txt-nuestro-equipo {
-text-align: center;
-width: 70%;
-margin-bottom: 20px;
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  perspective: 1500px; /* Establece perspectiva 3D */
 }
 
-@media screen and (max-width: 768px) {
-.txt-nuestro-equipo {
-  width: 80%;
-}
-}
-
-
-.cuadradosEquipo {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-margin-top: 20px;
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  animation: rotateCarousel 10s infinite linear;
 }
 
-.cuadroEquipo {
-background-color: #155da1;
-border-radius: 40px 40px 40px 40px;
-box-shadow:  #242b31 0px 0px 5px 0px;
-
-padding: 20px;
-margin: 15px;
-width: calc(20% - 35px);
-opacity: 1; /* inicialmente oculto */
-transform: translateY(10px); /* inicialmente fuera de la pantalla */
-transition: opacity 0.5s, transform 0.5s; /* add transition effect */
-text-align: center;
-font-size: 0.6em;
-font-family: 'Montserrat', sans-serif;
-color: white;
+.carousel-item {
+  width: 200px;
+  height: 300px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform-origin: center;
+  transition: transform 1s ease;
 }
 
-.scroll-revealEquipo {
-opacity: 1; /* mostrar cuando se scrollea */
-transform: translateY(00.5s); /* mostrar en su posición original */
+.flip-card {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px; /* Para el efecto flip */
 }
 
-
-
-.iconoEquipo {
-border-radius:10px 10px 10px 10px;
-width: 40%; /* ajusta el tamaño de la imagen */
-height: 40%; /* ajusta el tamaño de la imagen */
-margin-bottom: 10px;
-text-align: center;
-object-fit: cover; /* ajusta la imagen para que se adapte al tamaño */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
 }
 
-.h2-cuadro-equipo{
-color: white; 
-font-size: 2.5em;
-}
-.p-cuadro-equipo{
-max-width: 100%;
-font-size: 1.5em;
-}
-
-/* Media query for responsive design */
-@media (max-width: 1320px) {
-.cuadradosEquipo {
-  margin-top: 20px;
-}
-.cuadroEquipo {
-  width: calc(25% - 40px);
-}
-.h2-cuadro-equipo{
-  color: white; 
-  font-size: 2.5em;
-}
-.p-cuadro-equipo{
-  font-size: 1.5em;
-  padding-bottom: 30px;
-}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 
-/* Media query for responsive design */
-@media (max-width: 950px) {
-  .cuadradosEquipo {
-    margin-top: 20px;
+.flip-card-front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.flip-card-back {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.carousel-item:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.carousel-item p {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px ;
+}
+
+/* Animación del carrusel */
+@keyframes rotateCarousel {
+  0% {
+    transform: rotateY(0deg);
   }
-  .cuadroEquipo {
-    width: calc(25% - 40px);
+  100% {
+    transform: rotateY(360deg);
   }
-  .h2-cuadro-equipo{
-    color: white; 
-    font-size: 2.5em;
-  }
-  .p-cuadro-equipo{
-    font-size: 1.1em;
-    padding-bottom: 30px;
-  }
-  }
-
-@media (max-width: 730px) {
-.cuadradosEquipo {
-    margin-top: 20px;
 }
-.cuadroEquipo {
-  width: 60%;
-}
-.h2-cuadro-equipo{
-color: white; 
-font-size: 3em;
-}
-.p-cuadro-equipo{
-  font-size: 2em;
-  padding-bottom: 10px;
+/* Estilo para la animación */
+.carousel-wrapper {
+  animation: rotateCarousel 25s infinite linear;
 }
 
+/* Estilo para cada item en el carrusel */
+.carousel-item:nth-child(1) {
+  transform: rotateY(0deg) translateZ(300px);
 }
 
-@media (max-width: 480px) {
-.cuadradosEquipo {
-    margin-top: 20px;
-}
-.cuadroEquipo {
-  width: 60%;
-}
-.h2-cuadro-equipo{
-color: white; 
-font-size: 2em;
-}
-.p-cuadro-equipo{
-  font-size:1.2em;
-  padding-bottom: 0px;
+.carousel-item:nth-child(2) {
+  transform: rotateY(90deg) translateZ(300px);
 }
 
+.carousel-item:nth-child(3) {
+  transform: rotateY(180deg) translateZ(300px);
 }
+
+.carousel-item:nth-child(4) {
+  transform: rotateY(270deg) translateZ(300px);
+}
+
+
 /* Estilos de contacto */
 #contacto-h1 {
 padding-top: 90px;
