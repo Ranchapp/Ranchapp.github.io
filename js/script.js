@@ -119,3 +119,27 @@ function moveCarousel() {
 
 setInterval(moveCarousel, 3000); // Mueve el carrusel cada 3 segundos
 moveCarousel(); // Inicia el movimiento al cargar
+
+
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita la recarga de la página
+  const formData = new FormData(this); // Captura los datos del formulario
+
+  fetch('enviar-correo.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.ok ? response.text() : Promise.reject(response))
+  .then(data => {
+    // Mostrar el modal de éxito
+    document.getElementById('successModal').style.display = 'block';
+    // Reiniciar los campos del formulario
+    document.getElementById('contactForm').reset();
+  })
+  .catch(error => console.error('Error al enviar el formulario:', error));
+});
+
+document.getElementById('closeModalButton').addEventListener('click', function() {
+  document.getElementById('successModal').style.display = 'none';
+});

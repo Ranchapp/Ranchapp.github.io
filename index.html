@@ -66,7 +66,7 @@
                 <ul class="nav-list">
                     <li><button onclick="window.location.href='#INICIO'">INICIO</button></li>
                     <li><button onclick="window.location.href='#EVENTOS'">EVENTOS</button></li>
-                    <li><button onclick="window.location.href='#NOSOTROS'">NOSOTROS</button></li>
+                    <li><button onclick="window.location.href='#cuadroequipo'">NOSOTROS</button></li>
                    <span id="contacto-nav"> <li><button onclick="window.location.href='#CONTACT'">CONTACTO</button></li> </span>
                 </ul>
             </div>
@@ -208,25 +208,49 @@
     
 
 
-  <section id="CONTACT">
-    <h1 id="contacto-h1">CONTACTO</h1>
-    <div class="contact-container">
+    <section id="CONTACT">
+      <h1 id="contacto-h1">CONTACTO</h1>
+      <div class="contact-container">
         <div class="contact-form">
-            <form id="contactForm" onsubmit="openEmailClient(event)"> <!-- Cambié sendEmail a openEmailClient -->
-                <input type="text" id="name" name="name" placeholder=" Nombre" required>
-                <input type="email" id="email" name="email" placeholder=" Email" required>
-                <input type="tel" id="phone" name="phone" placeholder=" Teléfono" required>
-                <textarea id="message" name="message" rows="4" placeholder=" Mensaje" required></textarea>
-                <input type="text" id="honeypot" name="honeypot" style="display:none;">
-                <button type="submit">ENVIAR</button>
-              </form>
-            </div>
-          </div>
-          <p id="politicas-copyrigth">© 2024 RANCHAPP. Todos los derechos reservados.</p>
-    <img src="img/footer-bg.png" alt="Fondo" id="bg-image">
-</section>
-
-
+          <form id="contactForm" action="enviar-correo.php" method="POST">
+            <!-- Campo de Nombre -->
+            <input type="text" id="name" name="nombre" placeholder=" Nombre" required>
+            
+            <!-- Campo de Email -->
+            <input type="email" id="email" name="email" placeholder=" Email" required>
+            
+            <!-- Campo de Teléfono -->
+            <input type="tel" id="phone" name="telefono" placeholder=" Teléfono" required>
+            
+            <!-- Campo de Mensaje -->
+            <textarea id="message" name="mensaje" rows="4" placeholder=" Mensaje" required></textarea>
+            
+            <!-- Campo Honeypot oculto (para proteger contra bots) -->
+            <input type="text" id="honeypot" name="honeypot" style="display:none;">
+            
+            <!-- Botón de Enviar -->
+            <button type="submit">ENVIAR</button>
+          </form>
+        </div>
+      </div>
+    
+      <!-- Modal de confirmación -->
+      <div class="modal" id="successModal">
+        <div class="modal-content">
+          <p>¡Gracias por tu mensaje! Nos pondremos en contacto pronto.</p>
+          <!-- Botón de cierre debajo del texto -->
+          <button id="closeModalButton" class="close-btn">¡Gracias!</button>
+        </div>
+      </div>
+    
+      <!-- Derechos de autor -->
+      <p id="politicas-copyrigth">© 2024 RANCHAPP. Todos los derechos reservados.</p>
+    
+      <!-- Imagen de fondo -->
+      <img src="img/footer-bg.png" alt="Fondo" id="bg-image">
+    </section>
+    
+      
 
 
     <script src="js/script.js"></script>
