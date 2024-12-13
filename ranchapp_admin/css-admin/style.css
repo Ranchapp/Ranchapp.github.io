@@ -1,0 +1,39 @@
+body{
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.911);
+    color: white;
+
+}
+
+form{
+    padding: 30px;
+    display: inline-block;
+    border-radius: 15px;
+    border-color: white;
+    background-color: rgb(17, 9, 131);
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+form button{
+    padding: 5px;
+    border-radius: 10px;
+    border-color: transparent;
+    margin: 15px;
+    font-size: 1.5rem;
+    color:white ;
+    background-color:black ;
+}
+
+#h1-login{
+    color: white;
+}
+
+#cerrar_sesion{
+    color: red;
+}
+
+#NosEncDes{
+    font-size: 2em;
+}

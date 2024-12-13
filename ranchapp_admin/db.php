@@ -1,9 +1,9 @@
 <?php
 // Datos de la conexión
 $host = 'localhost';
-$dbname = 'c2730826_ranchap';
-$username = 'c2730826_ranchap'; // Cambia esto por tu usuario de MySQL
-$password = 'neBA54wile'; // Cambia esto por tu contraseña de MySQL
+$dbname = 'ranchapp_admin';
+$username = 'root'; // Cambia esto por tu usuario de MySQL
+$password = ''; // Cambia esto por tu contraseña de MySQL
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
